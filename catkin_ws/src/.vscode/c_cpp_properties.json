@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/salihortakaya/catkin_ws_cartographer/install_isolated/include/**",
+        "/home/salihortakaya/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/salihortakaya/catkin_ws/src/gazebo_ros_ray_plugin/include/**",
+        "/home/salihortakaya/catkin_ws/src/hector_gazebo/hector_gazebo_plugins/include/**",
+        "/home/salihortakaya/catkin_ws/src/hector_gazebo/hector_gazebo_thermal_camera/include/**",
+        "/home/salihortakaya/catkin_ws/src/pedsim_ros_with_gazebo/libpedsim/include/**",
+        "/home/salihortakaya/catkin_ws/src/pedsim_ros_with_gazebo/pedsim_sensors/include/**",
+        "/home/salihortakaya/catkin_ws/src/pedsim_ros_with_gazebo/pedsim_simulator/include/**",
+        "/home/salihortakaya/catkin_ws/src/pedsim_ros_with_gazebo/pedsim_utils/include/**",
+        "/home/salihortakaya/catkin_ws/src/pedsim_ros_with_gazebo/pedsim_visualizer/include/**",
+        "/home/salihortakaya/catkin_ws/src/robot_controller/include/**",
+        "/home/salihortakaya/catkin_ws/src/velodyne_simulator/velodyne_gazebo_plugins/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

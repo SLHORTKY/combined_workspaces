@@ -1,0 +1,21 @@
+<launch>
+
+	<arg name="x" default="-5.5"/>
+    <arg name="y" default="-5.35"/>
+    <arg name="z" default="0"/>
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="0.0"/>
+
+
+	<arg name="urdf" default="$(find amr_robots_description)/urdf/pioneer3at.urdf" />
+	<arg name="name" default="pioneer3at" />
+
+	<param name="robot_description" command="xacro $(arg urdf)" />
+
+	<include file="/home/salihortakaya/catkin_ws/robot_state_publisher.launch"/>
+
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model $(arg name) -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
+
+
+</launch>

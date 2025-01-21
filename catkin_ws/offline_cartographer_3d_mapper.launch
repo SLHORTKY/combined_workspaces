@@ -1,0 +1,37 @@
+<launch>
+
+  <!-- Argument to specify the bag file -->
+  <arg name="bag_filename" default="/home/salihortakaya/cartographer_mapping.bag" />
+
+  <!-- Use simulation time -->
+  <param name="/use_sim_time" value="true" />
+
+
+	<arg name="urdf" default="$(find amr_robots_description)/urdf/pioneer3at.urdf" />
+	<arg name="name" default="pioneer3at" />
+
+	<param name="robot_description" command="xacro $(arg urdf)" />
+
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find cartographer_ros)/configuration_files
+          -configuration_basename pioneer3at_robot_3d.lua"
+      output="screen">
+    <remap from="imu" to="/imu/data" />
+    <remap from="odom" to="/odometry/filtered" />
+    <remap from="points2" to="/lidar_points" />
+  </node>
+
+  <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
+      type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+
+  <!-- Start RViz with Cartographer's 3D configuration -->
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find cartographer_ros)/configuration_files/demo_3d.rviz" />
+
+  <!-- Play the bag file with simulated time -->
+  <node name="playbag" pkg="rosbag" type="play"
+      args="--clock $(arg bag_filename)" />
+
+</launch>
+
