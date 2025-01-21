@@ -1,10 +1,10 @@
 # Setup Instructions
 
-If you want to replicate the presented results, follow the steps below to configure your environment.
+To reproduce the presented results, you can follow the steps below to configure your environment.
 
 ## 1. Modify the `bashrc` File
 
-To set up the necessary environment variables, you need to modify the `.bashrc` file.
+To set up the necessary environment variables, modify the `.bashrc` file.
 
 1. Open your terminal and run:
    ```bash
@@ -23,11 +23,11 @@ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/opt/ros/noetic/share/gazebo_models
 export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:/opt/ros/noetic/share/gazebo
 
 # Custom Gazebo model and resource paths for your Catkin workspace
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/salihortakaya/catkin_ws/src/gazebo_models_worlds_collection/models
-export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:/home/salihortakaya/catkin_ws/src/gazebo_models_worlds_collection/worlds
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/path/to/your/catkin_ws/src/gazebo_models_worlds_collection/models
+export GAZEBO_RESOURCE_PATH=$GAZEBO_RESOURCE_PATH:/path/to/your/catkin_ws/src/gazebo_models_worlds_collection/worlds
 
 # Pedestrian simulation Gazebo plugin models
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/salihortakaya/catkin_ws/src/pedsim_ros_with_gazebo/pedsim_gazebo_plugin/models
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/path/to/your/catkin_ws/src/pedsim_ros_with_gazebo/pedsim_gazebo_plugin/models
 
 # Add Python3 to PATH
 export PATH="/usr/bin/python3:$PATH"
@@ -36,7 +36,7 @@ export PATH="/usr/bin/python3:$PATH"
 export CMAKE_PREFIX_PATH=/opt/ros/noetic/share:$CMAKE_PREFIX_PATH
 
 # Add Cartographer installation paths
-CARTOGRAPHER_INSTALL_PATH="/home/salihortakaya/catkin_ws_cartographer/install_isolated"
+CARTOGRAPHER_INSTALL_PATH="/path/to/your/catkin_ws_cartographer/install_isolated"
 
 export CMAKE_PREFIX_PATH="${CARTOGRAPHER_INSTALL_PATH}:${CMAKE_PREFIX_PATH}"
 export LD_LIBRARY_PATH="${CARTOGRAPHER_INSTALL_PATH}/lib:${LD_LIBRARY_PATH}"
